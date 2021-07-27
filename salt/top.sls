@@ -7,4 +7,5 @@ base:
   'location:RackB':
     - match: grain
     - timezones
+    - users_secured
     
