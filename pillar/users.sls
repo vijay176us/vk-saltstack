@@ -10,3 +10,5 @@ user-list:
     pass: adobe123 
   - name: user5
     pass: adobe123
+  - name: user6
+    pass: adobe123
