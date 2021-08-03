@@ -4,6 +4,7 @@ base:
   'location:RackA':
     - match: grain
     - timezones
+    - webserver
   'location:RackB':
     - match: grain
     - timezones
