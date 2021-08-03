@@ -2,14 +2,14 @@ apache:
   pkg.installed: []
   service.running:
     - require:
-      - pkg: apache
+      - pkg: apache2
 
 /var/www/index.html:                        # ID declaration
   file:                                     # state declaration
     - managed                               # function
     - source: salt://webserver/files/index.html   # function arg
     - require:                              # requisite declaration
-      - pkg: apache                         # requisite reference
+      - pkg: apache2                       # requisite reference
 
 {# /etc/httpd/extra/httpd-vhosts.conf:
   file.managed:
