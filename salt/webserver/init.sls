@@ -1,5 +1,5 @@
 apache:
-  pkg.installed: []
+  pkg.installed: [apache2]
   service.running:
     - require:
       - pkg: apache2
