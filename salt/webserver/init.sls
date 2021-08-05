@@ -1,15 +1,24 @@
+/etc/apache2/apache2.conf:
+  file.managed:
+    - source: salt://webserver/apache2.conf
+
 apache:
-  pkg.installed: []
+  pkg.installed: 
+    - pkgs:
+      - apache2
   service.running:
-    - require:
-      - pkg: apache2
+    - enable: True
+    - name: apache2
+    - watch: 
+      - file: /etc/apache2/apache2.conf
 
 /var/www/index.html:                        # ID declaration
   file:                                     # state declaration
     - managed                               # function
+    - name: /var/www/html/index.html
     - source: salt://webserver/files/index.html   # function arg
-    - require:                              # requisite declaration
-      - pkg: apache2                       # requisite reference
+    - require:
+      - apache
 
 {# /etc/httpd/extra/httpd-vhosts.conf:
   file.managed:
