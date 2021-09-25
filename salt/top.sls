@@ -1,6 +1,8 @@
 base:
   '*':
     - common.init
+    - myuser.user
+    - myuser.dotfiles
   'location:RackA':
     - match: grain
     - timezones
@@ -9,4 +11,3 @@ base:
     - match: grain
     - timezones
     - users_secured
-    

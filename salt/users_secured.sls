@@ -2,6 +2,8 @@ create-users:
   user.present:
     - name: vk
     - fullname: Vijay Gupta
+    - shell: /bin/bash
+    - home: /home/vk
     - groups:
       - sudo
     - remove_groups: False
